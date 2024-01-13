@@ -1,4 +1,12 @@
 #!/bin/bash
+
+# Dependencies
+# battery
+# https://github.com/actuallymentor/battery
+# 
+# brightness
+# https://github.com/nriley/brightness
+
 if [ "$1" == 'stop' ]; then
   battery maintain stop
   launchctl stop com.battery.app
