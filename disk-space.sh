@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Dependencies
+# smartmontools
+# https://formulae.brew.sh/formula/smartmontools
+
 if [ "$1" == "-l" ]; then
   du -h -d 1 ~/ | grep '[0-9]\+G' | sort -nr
 elif [ "$1" == "-la" ]; then
