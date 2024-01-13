@@ -15,10 +15,12 @@ elif [ "$1" == 'see' ]; then
 elif [ "$1" == 'low_power_off' ]; then
   [[ $(brightness -l) =~ (0\..*|1.0.*) ]] && last_brightness="${BASH_REMATCH[1]}"
   sudo pmset -a lowpowermode 0
+  sleep 0.3 # takes ~0.3 seconds for low powermode to change brightness on m1pro, may differ for other cpu models
   brightness "$last_brightness"
 elif [ "$1" == 'low_power_on' ]; then
   [[ $(brightness -l) =~ (0\..*|1.0.*) ]] && last_brightness="${BASH_REMATCH[1]}"
   sudo pmset -b lowpowermode 1
+  sleep 0.3 # takes ~0.3 seconds for low powermode to change brightness on m1pro, may differ for other cpu models
   brightness "$last_brightness"
 elif [ "$1" == 'health' ]; then
   ioreg -l -r -n AppleSmartBatteryManager | grep Capacity
