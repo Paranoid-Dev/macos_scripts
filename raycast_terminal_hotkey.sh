@@ -14,4 +14,4 @@
 # @raycast.author Paranoid-Dev
 # @raycast.authorURL https://github.com/Paranoid-Dev
 
-open -a Terminal --new /Users/user
+open -a Terminal /Users/user
